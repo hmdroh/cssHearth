@@ -1,4 +1,7 @@
 <style>
+    :root{
+        --bgcolor: pink;
+    }
     .heart{
         position: absolute;
         
@@ -9,15 +12,27 @@
         margin:  auto;
         height: 50px;
         width: 50px;
-        background: pink;
+        background: var(--bgcolor);
         border-radius: 50%;
+        transform: rotate(45deg);
+        animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
     }
+    @keyframes example {
+  0%   {--bgcolor:red; left:0px; top:0px;}
+  25%  {--bgcolor:yellow; left:200px; top:0px;}
+  50%  {--bgcolor:blue; left:200px; top:200px;}
+  75%  {--bgcolor:green; left:0px; top:200px;}
+  100% {--bgcolor:red; left:0px; top:0px;}
+}
     .heart::before{
         content: "";
         position: absolute;
         width: 50px;
         height: 50px;
-        background-color: pink;
+        background-color: var(--bgcolor);
         top: 0px;
         left: 25px;
     }
@@ -28,7 +43,7 @@
         height: 50px;
         left:25px;
         top: -25px;
-        background-color: pink;
+        background-color: var(--bgcolor);
         border-radius: 50%;
     }
 </style>
