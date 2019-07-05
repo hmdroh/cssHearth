@@ -2,6 +2,11 @@
     :root{
         --bgcolor: pink;
     }
+    body{
+        animation-name: backbody;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
     .heart{
         position: absolute;
         
@@ -15,17 +20,25 @@
         background: var(--bgcolor);
         border-radius: 50%;
         transform: rotate(45deg);
-        animation-name: example;
-  animation-duration: 4s;
+        animation-name: beat;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
 
     }
-    @keyframes example {
-  0%   {--bgcolor:red; left:0px; top:0px;}
-  25%  {--bgcolor:yellow; left:200px; top:0px;}
-  50%  {--bgcolor:blue; left:200px; top:200px;}
-  75%  {--bgcolor:green; left:0px; top:200px;}
-  100% {--bgcolor:red; left:0px; top:0px;}
+    @keyframes beat {
+  0%   {transform: scale(1) rotate(45deg);
+    }
+  50%  {transform: scale(0.6) rotate(45deg);
+}
+  100% {
+    transform: scale(1) rotate(45deg);}
+}
+@keyframes backbody{
+   
+    50%{
+        background-color: rgb(255, 226, 231);
+    }
+    
 }
     .heart::before{
         content: "";
